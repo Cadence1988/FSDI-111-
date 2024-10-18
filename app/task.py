@@ -22,7 +22,7 @@ def scan():
 
 def select_by_id(task_id):
     conn = get_db()
-    cursor = conn.execute("SELECT * FROM task WHERE is_done=?", (task_id, ))
+    cursor = conn.execute("SELECT * FROM task WHERE id=?", (task_id, ))
     results = cursor.fetchall()
     if results:
         return output_formatter(results)[0]

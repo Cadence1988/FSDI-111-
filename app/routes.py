@@ -1,10 +1,9 @@
 from flask import (
     Flask,
-    render_template,
-    request as req
+    request 
 ) 
-from app.database import task               # from the flask module import the Flask class
-# oop--Object oriented paradigm
+from app.database import task              # from the flask module import the Flask class
+                                         # oop--Object oriented paradigm
 app = Flask(__name__)              # Create an instance of the flask class (app is now an oblect)
 
 @app.get("/")                       # Flask decorator to map routes to view functions
