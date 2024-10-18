@@ -1,10 +1,11 @@
-#!/usr/bin/env python3
-# -*- coding: utf8 -*-
-""" Sample hello world world Flask app"""
+from flask import g
+import sqlite3
 
-from flask import Flask
-app = Flask(__name__)
 
-@app.route("/")
-def hello():
-    return "<h1>Hello, world!</h1>"
+DB_URI = "main.db"
+
+def get_db():
+    db = getattr(g, "_database", None)
+    if not db:
+        db = g._database = sqlite3.connect(DB_URI)
+    return db
