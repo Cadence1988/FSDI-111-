@@ -35,7 +35,7 @@ def insert(task_data):
         task_data.get("description")
     )
     statement = """
-        INSERT INT task (
+        INSERT INTO task (
             name,
             summary,
             description
